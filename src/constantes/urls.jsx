@@ -1,0 +1,6 @@
+export const HOME_URL = "/"
+export const REGISTER_URL = "/register"
+export const LOGIN_URL = "/login"
+export const REGISTER_DOCTOR_URL = "/registerDoctor"
+export const REGISTER_PATIENT_URL = "/registerPatient"
+export const PERFIL_CLIENTE = "/perfilCliente"
