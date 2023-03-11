@@ -7,12 +7,10 @@ import { registerWithEmailAndPassword } from '../../firebase/auth-service'
 export function RegisterPage() {
     const navigate = useNavigate();
     const [formData,setFormData] =useState({
-        doctor:false,
         name:"",
         email:"",
         phone:"",
         password:"",
-        confirmPassword:"",
     })
   
 //const para el login con google

@@ -9,6 +9,8 @@ import Number from '../../Componentes/LandingPage/Number';
 export function HomePage() {
 
   return (
+
+
     <div className='box-border p-0 m-0 scroll-smooth'> {/*Contenedor principal*/}
         <div className='flex bg-[#5974A9]'> {/*Primera vista de la Homepage con imagen*/}
             <div className='ml-[20px] leading-normal'> {/*Lado izquierdo de la vista*/}
@@ -91,6 +93,6 @@ export function HomePage() {
 
 
     </div>
-
+ 
   )
 }
