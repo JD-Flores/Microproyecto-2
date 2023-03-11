@@ -38,11 +38,11 @@ export function RegisterPage() {
   
     return (
     <div className="">
-      <div className="max-w-lg mx-auto p-8 rounded-3xl shadow-2xl my-12">
+      <div className="max-w-lg mx-auto p-8 rounded-3xl shadow-2xl my-12 border-slate-200 border">
         
         <h1 className="text-4xl font-medium text-center">Registrar Cuenta</h1>
         <div className="mt-10 mb-4  flex flex-col items-center">
-              <button onClick={handleSigninWithGoogle} className="w-2/3 text-center py-3 my-3 border flex space-x-2 items-center justify-center border-slate-200 rounded-full text-slate-700 hover:shadow-md hover:scale-105 bg-white">
+              <button onClick={handleSigninWithGoogle} className="w-2/3 text-center py-3 my-3 border flex space-x-2 items-center justify-center border-slate-300 rounded-full text-slate-700 hover:shadow-md hover:scale-105 bg-white">
                   <img src="https://www.svgrepo.com/show/355037/google.svg" className="w-6 h-6" alt=""/>
                   <span>Register with Google</span>
               </button>
@@ -55,20 +55,20 @@ export function RegisterPage() {
                 <input 
                 id="name" name="name" type="text" 
                 onChange={handleOnChange}
-                className="w-full py-3 border border-slate-200 rounded-full px-3 focus:outline-none focus:border-slate-500 hover:shadow" placeholder="Nombre completo"/>
+                className="w-full py-3 border border-slate-300 rounded-full px-3 focus:outline-none focus:border-slate-500 hover:shadow" placeholder="Nombre completo"/>
 
                 <input 
                 id="email" name="email" type="email" 
                 onChange={handleOnChange}
-                className="w-full py-3 border border-slate-200 rounded-full px-3 focus:outline-none focus:border-slate-500 hover:shadow mt-4" placeholder="Dirección de correo"/>
+                className="w-full py-3 border border-slate-300 rounded-full px-3 focus:outline-none focus:border-slate-500 hover:shadow mt-4" placeholder="Dirección de correo"/>
                 <input 
                 id="phone" name="phone" type="text" 
                 onChange={handleOnChange}
-                className="w-full py-3 border border-slate-200 rounded-full px-3 focus:outline-none focus:border-slate-500 hover:shadow mt-4" placeholder="Número de telefono  Ej. 4123217512"/>
+                className="w-full py-3 border border-slate-300 rounded-full px-3 focus:outline-none focus:border-slate-500 hover:shadow mt-4" placeholder="Número de telefono  Ej. 4123217512"/>
 
                 <input id="password" name="password" type="password" 
                 onChange={handleOnChange}
-                className="w-full py-3 border border-slate-200 rounded-full px-3 focus:outline-none focus:border-slate-500 hover:shadow mt-4" placeholder="Contraseña"/>
+                className="w-full py-3 border border-slate-300 rounded-full px-3 focus:outline-none focus:border-slate-500 hover:shadow mt-4" placeholder="Contraseña"/>
 
                 <button className="w-full py-3 font-medium text-white bg-blue-600 hover:bg-blue-500 rounded-full border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center mt-12 mb-2 hover:scale-105">
                       <span>Register</span>
