@@ -1,23 +1,29 @@
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import {getAuth, GoogleAuthProvider} from "firebase/auth"
-import {getFirestore} from "firebase/firestore"
-import {getStorage} from "firebase/storage"
+import { getAnalytics } from "firebase/analytics";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getStorage } from "firebase/storage";
+import { getFirestore } from "firebase/firestore";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyC7mSikd6KU3UF3TmHPAAOACjWlp9r5Nb0",
-  authDomain: "proyecto-psicomedica-6dbc5.firebaseapp.com",
-  projectId: "proyecto-psicomedica-6dbc5",
-  storageBucket: "proyecto-psicomedica-6dbc5.appspot.com",
-  messagingSenderId: "443667900809",
-  appId: "1:443667900809:web:6407d732b24f60f4be5958",
-  measurementId: "G-EQTS4VMWBP"
+  apiKey: "AIzaSyAk7Q1Oy9WSTkhv_PqHzawFdI8wHRx-07o",
+  authDomain: "microproyecto-2-38c37.firebaseapp.com",
+  projectId: "microproyecto-2-38c37",
+  storageBucket: "microproyecto-2-38c37.appspot.com",
+  messagingSenderId: "229866932056",
+  appId: "1:229866932056:web:fa5edf1f36f499a3bf872d",
+  measurementId: "G-78BK9GVPEW"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);//Conexion modulo de firebase
-export const db = getFirestore(app);//conexion base de datos firestore
-export const store = getStorage(app);//conexion con el storage de firebase
-
+const analytics = getAnalytics(app);
+export const auth = getAuth(app);
+export const store = getStorage(app);
+export const db = getFirestore(app);
 export const googleProvider = new GoogleAuthProvider();
-googleProvider.setCustomParameters({prompt:"select_account"})
+googleProvider.setCustomParameters({ prompt: "select_account" });
