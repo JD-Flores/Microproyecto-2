@@ -11,6 +11,7 @@ export function HomePage() {
   const getMovies = async () => {
     setLoading(true)
     const {data} = await fetchMovies()
+    
     setMovies(data.results)
 
     console.log(data) 
@@ -24,11 +25,12 @@ export function HomePage() {
 
   return (
     <div>
-      <div className="flex flex-wrap items-center justify-between m-4 gap-y-3 mt-12">
-        <MovieCard/>
-        <MovieCard/>
-        <MovieCard/>
-        <MovieCard/>
+      <h1 className="text-4xl font-bold ml-8 mt-4">Peliculas</h1>
+      <div className="flex flex-wrap items-center justify-between m-4 gap-y-4 mt-8">
+        {movies.map((movie, idx) => (
+          console.log(movie),
+        <MovieCard key={idx} movie={movie} />
+        ))}
       </div>
     </div>
   )
