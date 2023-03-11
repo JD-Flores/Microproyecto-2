@@ -6,7 +6,7 @@ import { createUserProfile } from "./users-service";
 
 export const signInWithGoogle = async()=>{
     try {
-        const result = await signInWithPopup(auth,googleProvider)//abre la ventana de login de google
+        const result = await signInWithPopup(auth,googleProvider)
         
         const {isNewUser}=getAdditionalUserInfo(result);
         if(isNewUser){
