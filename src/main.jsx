@@ -8,8 +8,6 @@ import {HomePage} from './Paginas/Home/HomePage'
 import {RegisterPage} from './Paginas/register/RegisterPage'
 import { LoginPage } from './Paginas/login/LoginPage'
 import ErrorPage from './Paginas/error/ErrorPage'
-import { PerfilClientePage } from './Paginas/Perfil/PerfilClientePage'
-import { PrivateRoute } from './Componentes/PrivateRoutes/PrivateRoute'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -21,7 +19,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path={REGISTER_URL} element={<RegisterPage/>}/>
         <Route path={LOGIN_URL} element={<LoginPage/>}/>
         <Route path={MOVIES_URL} element={<HomePage/>}/>
-        <Route path={PROFILE_CLIENT} element={<PrivateRoute><PerfilClientePage/></PrivateRoute>}/>
         <Route path="/*" element={<ErrorPage/>}/>
         </Route>
       </Routes>

@@ -14,7 +14,7 @@ export function Navbar() {
    }
   return (
     <nav id="header" className="w-full z-30 top-10 py-1 shadow-lg border-b bg-blue-900 font-comfortaa text-[14px]  ">
-      <div className="w-full flex items-center justify-between mt-0 px-6 py-2">
+      <div className="w-full flex items-center justify-between mt-0 sm:px-6 py-2 px-1">
       <div className="group md:hidden block">
             <button
                 className="outline-none focus:outline-none border px-3 py-1 bg-white flex items-center min-w-32 rounded-2xl"
@@ -52,8 +52,7 @@ export function Navbar() {
          {user&&(
            <div className="order-2 md:order-3 flex flex-wrap items-center justify-end mr-0 md:mr-4" id="nav-content">
            <div className="auth flex items-center w-full md:w-full">
-              <Link to={PROFILE_CLIENT} className="bg-white text-gray-800  p-2 rounded border border-gray-300 mr-4 hover:bg-gray-100 hover:text-gray-700 hover:font-bold">Mi perfil</Link>
-              <button onClick={handleLogout} className="bg-blue-600 text-gray-200  p-2 rounded  hover:bg-blue-500 hover:text-gray-100 hover:font-bold">Logout</button>
+              <button onClick={handleLogout} className="bg-white text-blue-900 p-2 rounded-full hover:bg-blue-700 hover:text-neutral-100 transition duration-400 ease-out mr-4 px-5 hover:font-bold">Logout</button>
            </div>
         </div> 
          )}
@@ -62,7 +61,7 @@ export function Navbar() {
          {!user &&(<>
          <div className="order-2 md:order-3 flex flex-wrap items-center justify-end mr-0 md:mr-4" id="nav-content">
             <div className="auth flex items-center w-full md:w-full">
-               <Link to={LOGIN_URL} className="bg-white text-blue-900 p-2 rounded-full hover:bg-blue-700 hover:text-neutral-100 transition duration-400 ease-out mr-4 px-5 hover:font-bold">Iniciar sesion</Link>
+               <Link to={LOGIN_URL} className="bg-white text-blue-900 p-2 rounded-full hover:bg-blue-700 hover:text-neutral-100 transition duration-400 ease-out sm:mr-4 px-5 hover:font-bold sm:text-base mr-1">Iniciar sesion</Link>
                <Link to={REGISTER_URL} className="bg-white text-blue-900 p-2 rounded-full hover:bg-blue-700 hover:text-neutral-100 transition duration-400 ease-out px-5 hover:font-bold">Registrarse</Link>
             </div>
          </div>
