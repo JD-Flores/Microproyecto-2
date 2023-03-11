@@ -38,7 +38,7 @@ export function RegisterPage() {
   
     return (
     <div className="">
-      <div className="max-w-lg mx-auto p-8 rounded-3xl shadow-2xl mb-64">
+      <div className="max-w-lg mx-auto p-8 rounded-3xl shadow-2xl my-12">
         
         <h1 className="text-4xl font-medium text-center">Registrar Cuenta</h1>
         <div className="mt-10 mb-4  flex flex-col items-center">
