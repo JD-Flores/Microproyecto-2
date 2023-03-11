@@ -1,10 +1,10 @@
 import { async } from '@firebase/util';
 import React from 'react'
 import { Link } from "react-router-dom";
-import { HOME_URL, LOGIN_URL, PROFILE_CLIENT, REGISTER_URL, MOVIES_URL } from '../../constantes/urls';
+import { HOME_URL, LOGIN_URL, PROFILE_CLIENT, REGISTER_URL, MOVIES_URL, SEARCH_URL } from '../../constantes/urls';
 import { useUser } from '../../contexts/UserContext';
 import { logout } from '../../firebase/auth-service';
-// import { HOME_URL } from '../../constantes/urls';
+
 
 
 export function Navbar() {
@@ -38,14 +38,14 @@ export function Navbar() {
             transition duration-150 ease-in-out origin-top min-w-32"
             >
                 <li className="px-3 py-1 hover:bg-gray-100 hover:font-bold"><Link to={MOVIES_URL}>Películas</Link></li>
-                <li className="px-3 py-1 hover:bg-gray-100 hover:font-bold"><Link to={HOME_URL}>Buscador</Link></li>
+                <li className="px-3 py-1 hover:bg-gray-100 hover:font-bold"><Link to={SEARCH_URL}>Buscador</Link></li>
             </ul>
             </div>
          <div className="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1 overflow-y-auto " id="menu">
             <nav>
                <ul className="md:flex items-center justify-between text-base text-white font-bold pt-4 md:pt-0">
                   <li><Link to={MOVIES_URL} className="inline-block no-underline hover:text-gray-300 text-lg py-2 px-4 lg:-ml-2 transition duration-500 ease-out" >Películas</Link></li>
-                  <li><Link to={HOME_URL} className="inline-block no-underline hover:text-gray-100 text-lg py-2 px-4 lg:-ml-2 transition duration-500 ease-out" >Buscador</Link></li>
+                  <li><Link to={SEARCH_URL} className="inline-block no-underline hover:text-gray-100 text-lg py-2 px-4 lg:-ml-2 transition duration-500 ease-out" >Buscador</Link></li>
                </ul>
             </nav>
          </div>
