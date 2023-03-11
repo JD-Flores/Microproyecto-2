@@ -8,7 +8,7 @@ export function MovieCard (props) {
             <div className="h-auto w-1/2">
                 <img src={"https://image.tmdb.org/t/p/w92/" + poster_path} alt="poster" className="w-full"/>
             </div>
-            
+
             <div className="p-4">
                 <h1 className="text-2xl font-bold">{title}</h1>
                 <h1 className=""><span className="font-semibold">Popularidad:</span>&nbsp;{popularity}</h1>
