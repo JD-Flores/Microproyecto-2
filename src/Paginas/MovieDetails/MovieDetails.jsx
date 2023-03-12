@@ -1,14 +1,17 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useMovies } from "../../hooks/useMovies";
+import { useLanguages } from "../../hooks/useLanguages";
 
 export function MovieDetails() {
     const { movie_id } = useParams();
     const { movie, isLoading, getMovieById } = useMovies(movie_id);
+    const { languages, isLoadingLanguages, getLanguages } = useLanguages();
 
 
     useEffect(() => {
         getMovieById(movie_id);
+        getLanguages();
     }, []);
     
     return (
@@ -22,7 +25,12 @@ export function MovieDetails() {
                     <h1 className="text-4xl font-bold md:text-6xl">{movie.title}</h1>
                 </div>
                     <h1 className=""><span className="font-semibold">Lista de generos:</span>&nbsp;{movie.genres && movie.genres.map(genre => genre.name).join(", ")}</h1>
-                    <h1 className=""><span className="font-semibold">Lenguaje original:</span>&nbsp;{movie.original_language}</h1> 
+                    <h1 className=""><span className="font-semibold">Lenguaje original:</span>&nbsp;
+                    {languages && languages
+                    .filter(language => language.iso_639_1 === movie.original_language)
+                    .map(language => language.english_name)
+                    }
+                    </h1>
                     <h1 className=""><span className="font-semibold">Presupuesto:</span>&nbsp;${movie.budget}</h1>
                     <h1 className=""><span className="font-semibold">Descripción:</span>&nbsp;{movie.overview}</h1>
                     <h1 className=""><span className="font-semibold">Rating de popularidad:</span>&nbsp;{movie.popularity}</h1>

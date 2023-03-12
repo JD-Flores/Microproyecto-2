@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { MovieCard } from '../../Componentes/MovieCard/MovieCard'
 import { useMovies } from '../../hooks/useMovies'
+import { useLanguages } from '../../hooks/useLanguages'
 
 
 export function HomePage() {
 
   const { movies, isLoading, getMovies, getUpcomingMovies } = useMovies();
+  const { languages, isLoadingLanguages, getLanguages } = useLanguages();
 
   useEffect(() => {
     getMovies();
+    getLanguages();
   }, []);
 
   useEffect(() => {
    getUpcomingMovies();
+   getLanguages();
   }, []);
   let estrenos = 0;
 
@@ -23,7 +27,7 @@ export function HomePage() {
       <button className={`w-1/5 px-5 py-2 font-comfortaa text-blue-900 rounded-lg drop-shadow-lg transition duration-400 ease-out m-4 ${estrenos === 1 ? 'bg-sky-700 text-gray-100' : 'border-solid border-slate-600 border-2 hover:text-slate-300'}`}>Proximos estrenos</button>
       <div className="flex flex-wrap items-center justify-between m-4 gap-y-4 mt-8">
         {movies.map((movie, idx) => (
-        <MovieCard key={idx} movie={movie} />
+        <MovieCard key={idx} movie={movie} languages={languages}/>
         ))}
       </div>
     </div>

@@ -2,6 +2,7 @@ import React from 'react';
 
 export function MovieCard (props) {
     const { title, poster_path, original_language, popularity } = props.movie;
+    const{ languages } = props.languages;
 
     return (
         <div className="h-auto w-11/12 rounded-3xl shadow-lg p-4 text-xl flex border-2 border-gray-100 max-w-sm items-center">
@@ -12,7 +13,12 @@ export function MovieCard (props) {
             <div className="p-4">
                 <h1 className="text-2xl font-bold">{title}</h1>
                 <h1 className=""><span className="font-semibold">Popularidad:</span>&nbsp;{popularity}</h1>
-                <h1 className=""><span className="font-semibold">Idioma:</span>&nbsp;{original_language}</h1>
+                <h1 className=""><span className="font-semibold">Idioma:</span>&nbsp;
+                {languages && languages
+                .filter(language => language.iso_639_1 === movie.original_language)
+                .map(language => language.english_name)
+                }
+                </h1>
             </div>
             
         </div>
