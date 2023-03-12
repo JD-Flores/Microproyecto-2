@@ -1,4 +1,4 @@
-import { LOGIN_URL, PROFILE_CLIENT } from '../../constantes/urls'
+import { LOGIN_URL, MOVIES_URL } from '../../constantes/urls'
 import { Link, useNavigate } from 'react-router-dom'
 import { signInWithGoogle } from '../../firebase/auth-service'
 import { useState } from 'react'
@@ -16,14 +16,14 @@ export function RegisterPage() {
 //const para el login con google
     const handleSigninWithGoogle = async ()=>{
         await signInWithGoogle();
-        navigate(PROFILE_CLIENT)
+        navigate(MOVIES_URL)
     }
 
     const onSubmit = async(event)=>{
         event.preventDefault();//evita que el form recargue la pagina
         const{email,password,...extraData}=formData//form destructurado
         await registerWithEmailAndPassword(email,password,extraData);
-        navigate(PROFILE_CLIENT)
+        navigate(MOVIES_URL)
     }
 //en cada input utiliza la info del campo para agregarla al form existente
     const handleOnChange = (event)=>{

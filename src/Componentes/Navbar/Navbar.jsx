@@ -1,7 +1,7 @@
 import { async } from '@firebase/util';
 import React from 'react'
 import { Link } from "react-router-dom";
-import { HOME_URL, LOGIN_URL, PROFILE_CLIENT, REGISTER_URL, MOVIES_URL, SEARCH_URL } from '../../constantes/urls';
+import { HOME_URL, LOGIN_URL, REGISTER_URL, MOVIES_URL, SEARCH_URL } from '../../constantes/urls';
 import { useUser } from '../../contexts/UserContext';
 import { logout } from '../../firebase/auth-service';
 

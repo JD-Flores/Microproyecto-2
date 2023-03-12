@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { MovieCard } from '../../Componentes/MovieCard/MovieCard'
 import { useMovies } from '../../hooks/useMovies'
-import { fetchMovies } from '../../utils/movies-api';
 let page = 1
 
 export function HomePage() {
@@ -43,9 +42,10 @@ export function HomePage() {
         <MovieCard key={idx} movie={movie} />
         ))}
       </div>
-      <div className=' flex justify-center'>
-      <button onClick={previousPage} className={`w-1/5 px-5 py-2 font-comfortaa text-black-900 rounded-lg drop-shadow-lg transition duration-400 ease-out m-4 bg-sky-700 border-solid border-slate-600 border-2 hover:text-slate-300'}`}>&lt; </button>
-      <button onClick={nextPage} className={`w-1/5 px-5 py-2 font-comfortaa text-black-900 rounded-lg drop-shadow-lg transition duration-400 ease-out m-4 bg-sky-700 border-solid border-slate-600 border-2 hover:text-slate-300'}`}>&gt;</button>
+      <div className='flex justify-center'>
+      <button onClick={previousPage} className={`w-1/10 px-5 py-2 font-comfortaa text-gray-100 rounded-lg drop-shadow-lg transition duration-400 ease-out m-4 bg-sky-700 border-solid border-slate-600 border-2 hover:text-slate-300`}>&lt; </button>
+      <p className={`w-1/10 px-5 py-2 font-comfortaa text-gray-900 drop-shadow-lg m-4`}>{page}</p>
+      <button onClick={nextPage} className={`w-1/10 px-5 py-2 font-comfortaa text-gray-100 rounded-lg drop-shadow-lg transition duration-400 ease-out m-4 bg-sky-700 border-solid border-slate-600 border-2 hover:text-slate-300`}>&gt;</button>
       </div>
     </div>
   )

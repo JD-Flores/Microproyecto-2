@@ -1,7 +1,7 @@
 import { async } from '@firebase/util';
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import { PROFILE_CLIENT, REGISTER_URL } from '../../constantes/urls';
+import { MOVIES_URL, REGISTER_URL } from '../../constantes/urls';
 import { logInWithEmailAndPassword, signInWithGoogle } from '../../firebase/auth-service';
 
 export function LoginPage() {
@@ -12,14 +12,14 @@ const[formData,setFormData]=useState({
 })
 const handleSigninWithGoogle = async ()=>{
     await signInWithGoogle();
-    navigate(PROFILE_CLIENT)
+    navigate(MOVIES_URL)
 }
 
 const onSubmit = async(event)=>{
     event.preventDefault();//evita que el form recargue la pagina
     const{email,password}=formData//form destructurado
     await logInWithEmailAndPassword(email,password);
-    navigate(PROFILE_CLIENT)
+    navigate(MOVIES_URL)
 }
 //en cada input utiliza la informacion del campo para agregarla al form existente
 const handleOnChange = (event)=>{
