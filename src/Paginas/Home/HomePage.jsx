@@ -25,7 +25,6 @@ export function HomePage() {
 
   const nextPage = () => {
     if(page < total_pages) {
-      console.log(page)
       page++
       getMovies(page)
     }
