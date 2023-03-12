@@ -44,8 +44,8 @@ export function Navbar() {
          <div className="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1 overflow-y-auto " id="menu">
             <nav>
                <ul className="md:flex items-center justify-between text-base text-white font-bold pt-4 md:pt-0">
-                  <li><Link to={MOVIES_URL} className="inline-block no-underline hover:text-gray-300 text-lg py-2 px-4 lg:-ml-2 transition duration-500 ease-out" >Películas</Link></li>
-                  <li><Link to={SEARCH_URL} className="inline-block no-underline hover:text-gray-100 text-lg py-2 px-4 lg:-ml-2 transition duration-500 ease-out" >Buscador</Link></li>
+                  <li><Link to={MOVIES_URL} className="inline-block no-underline hover:text-gray-300 text-lg py-2 px-4 lg:-ml-2 transition duration-500 ease-out">Películas</Link></li>
+                  <li><Link to={SEARCH_URL} className="inline-block no-underline hover:text-gray-300 text-lg py-2 px-4 lg:-ml-2 transition duration-500 ease-out">Buscador</Link></li>
                </ul>
             </nav>
          </div>
