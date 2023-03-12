@@ -7,9 +7,8 @@ import { registerWithEmailAndPassword } from '../../firebase/auth-service'
 export function RegisterPage() {
     const navigate = useNavigate();
     const [formData,setFormData] =useState({
-        name:"",
+        username:"",
         email:"",
-        phone:"",
         password:"",
     })
   
@@ -21,8 +20,8 @@ export function RegisterPage() {
 
     const onSubmit = async(event)=>{
         event.preventDefault();//evita que el form recargue la pagina
-        const{email,password,...extraData}=formData//form destructurado
-        await registerWithEmailAndPassword(email,password,extraData);
+        const{username,email,password}=formData//form destructurado
+        await registerWithEmailAndPassword(username, email,password);
         navigate(MOVIES_URL)
     }
 //en cada input utiliza la info del campo para agregarla al form existente
@@ -51,18 +50,14 @@ export function RegisterPage() {
         <form action="" onSubmit={onSubmit}>
             <div className="flex flex-col">
                 <input 
-                id="name" name="name" type="text" 
+                id="username" name="username" type="text" 
                 onChange={handleOnChange}
-                className="w-full py-3 border border-slate-300 rounded-full px-3 focus:outline-none focus:border-slate-500 hover:shadow" placeholder="Nombre completo"/>
+                className="w-full py-3 border border-slate-300 rounded-full px-3 focus:outline-none focus:border-slate-500 hover:shadow" placeholder="Nombre de usuario"/>
 
                 <input 
                 id="email" name="email" type="email" 
                 onChange={handleOnChange}
                 className="w-full py-3 border border-slate-300 rounded-full px-3 focus:outline-none focus:border-slate-500 hover:shadow mt-4" placeholder="Dirección de correo"/>
-                <input 
-                id="phone" name="phone" type="text" 
-                onChange={handleOnChange}
-                className="w-full py-3 border border-slate-300 rounded-full px-3 focus:outline-none focus:border-slate-500 hover:shadow mt-4" placeholder="Número de telefono  Ej. 4123217512"/>
 
                 <input id="password" name="password" type="password" 
                 onChange={handleOnChange}
