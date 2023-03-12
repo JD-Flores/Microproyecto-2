@@ -1,7 +1,5 @@
 import { useState } from "react";
-import { fetchMovies } from "../utils/movies-api";
-
-import { fetchUpcomingMovies } from "../utils/movies-api";
+import { fetchMovies, fetchUpcomingMovies, fetchMovieQuery } from "../utils/movies-api";
 
 export function useMovies() {
     const [movies, setMovies] = useState([])
@@ -20,6 +18,12 @@ export function useMovies() {
         
         setMovies(data.results)
     }
-    return {movies, isLoading, getMovies, getUpcomingMovies}
+    const getMovieQuery = async (search) => {
+        setLoading(true)
+        const {data} = await fetchMovieQuery(search)
+        
+        setMovies(data.results)
+    }
+    return {movies, isLoading, getMovies, getUpcomingMovies, getMovieQuery}
 }
 
