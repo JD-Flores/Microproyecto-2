@@ -3,20 +3,25 @@ import { fetchMovies, fetchUpcomingMovies, fetchMovieQuery } from "../utils/movi
 
 export function useMovies() {
     const [movies, setMovies] = useState([])
+    const [total_pages, setPages] = useState()
     const [isLoading, setLoading] = useState(false);
 
-    const getUpcomingMovies = async () => {
+    const getUpcomingMovies = async (page) => {
         setLoading(true)
-        const {data} = await fetchUpcomingMovies()
+        const {data} = await fetchUpcomingMovies(page)
         
+        setPages(data.total_pages)
         setMovies(data.results)
+        setLoading(false)
     }
     
-    const getMovies = async () => {
+    const getMovies = async (page) => {
         setLoading(true)
-        const {data} = await fetchMovies()
+        const {data} = await fetchMovies(page)
         
+        setPages(data.total_pages)
         setMovies(data.results)
+        setLoading(false)
     }
     const getMovieQuery = async (search) => {
         setLoading(true)
@@ -24,6 +29,6 @@ export function useMovies() {
         
         setMovies(data.results)
     }
-    return {movies, isLoading, getMovies, getUpcomingMovies, getMovieQuery}
+    return {movies, total_pages, isLoading, getMovies, getUpcomingMovies, getMovieQuery}
 }
 
