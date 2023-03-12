@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { Routes,Route,BrowserRouter} from "react-router-dom"
-import {HOME_URL, LOGIN_URL, REGISTER_URL, MOVIES_URL } from './constantes/urls'
+import {HOME_URL, LOGIN_URL, REGISTER_URL, MOVIES_URL, SEARCH_URL } from './constantes/urls'
 import { Layout } from './Componentes/Layout/Layout'
 import {HomePage} from './Paginas/Home/HomePage'
 import {RegisterPage} from './Paginas/register/RegisterPage'

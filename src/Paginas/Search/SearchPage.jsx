@@ -15,7 +15,7 @@ export function SearchPage() {
         </div>
         <button className='bg-slate-300 px-5 font-comfortaa text-blue-900 rounded-lg drop-shadow-lg hover:bg-slate-400 hover:text-neutral-200 transition duration-400 ease-out px-5'>Buscar</button>
       </div>
-      <MovieCard/>
+      
     </div>
   )
 }
