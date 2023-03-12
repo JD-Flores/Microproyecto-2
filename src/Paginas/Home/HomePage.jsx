@@ -5,13 +5,11 @@ import { useMovies } from '../../hooks/useMovies'
 
 export function HomePage() {
 
-  const { movies, isLoading, getMovies } = useMovies();
+  const { movies, isLoading, getMovies, getUpcomingMovies } = useMovies();
 
   useEffect(() => {
     getMovies();
   }, []);
-
-  const { upcomingMovies, isUpcomingLoading, getUpcomingMovies } = useUpcomingMovies();
 
   useEffect(() => {
     getUpcomingMovies();
