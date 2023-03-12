@@ -50,10 +50,7 @@ export function RegisterPage() {
         </div>
         <form action="" onSubmit={onSubmit}>
             <div className="flex flex-col">
-                <input 
-                id="name" name="name" type="text" 
-                onChange={handleOnChange}
-                className="w-full py-3 border border-slate-300 rounded-full px-3 focus:outline-none focus:border-slate-500 hover:shadow" placeholder="Nombre completo"/>
+
 
                 <input 
                 id="email" name="email" type="email" 
@@ -62,7 +59,7 @@ export function RegisterPage() {
                 <input 
                 id="phone" name="phone" type="text" 
                 onChange={handleOnChange}
-                className="w-full py-3 border border-slate-300 rounded-full px-3 focus:outline-none focus:border-slate-500 hover:shadow mt-4" placeholder="Número de telefono  Ej. 4123217512"/>
+                className="w-full py-3 border border-slate-300 rounded-full px-3 focus:outline-none focus:border-slate-500 hover:shadow mt-4" placeholder="Nombre de usuario"/>
 
                 <input id="password" name="password" type="password" 
                 onChange={handleOnChange}

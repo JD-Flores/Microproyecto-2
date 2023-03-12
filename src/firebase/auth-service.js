@@ -13,7 +13,7 @@ export const signInWithGoogle = async()=>{
           await createUserProfile(result.user.uid,{
             email: result.user.email,
             name: result.user.displayName,
-            phone: "",
+            username: "",
             
           })
         }
@@ -25,7 +25,7 @@ export const signInWithGoogle = async()=>{
 export const logInWithEmailAndPassword = async(email,password)=>{
   try {
     const result = await signInWithEmailAndPassword(auth,email,password);
-    console.log("Login",result)
+    console.log("Login exitoso",result)
   } catch (error) {
     console.error(error)  
   }
@@ -43,7 +43,7 @@ export const registerWithEmailAndPassword = async(
       password,
       ...extraData,
     })
-    console.log("Register emailandpass",result)
+    console.log("Registro exitoso",result)
   } catch (error) {
     console.error(error)  
   }
