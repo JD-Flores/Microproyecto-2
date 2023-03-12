@@ -61,7 +61,7 @@ export function Navbar() {
          {!user &&(<>
          <div className="order-2 md:order-3 flex flex-wrap items-center justify-end mr-0 md:mr-4" id="nav-content">
             <div className="auth flex items-center w-full md:w-full">
-               <Link to={LOGIN_URL} className="bg-white text-blue-900 p-2 rounded-full hover:bg-blue-700 hover:text-neutral-100 transition duration-400 ease-out sm:mr-4 px-5 hover:font-bold sm:text-base mr-1">Iniciar sesion</Link>
+               <Link to={LOGIN_URL} className="bg-white text-blue-900 p-2 rounded-full hover:bg-blue-700 hover:text-neutral-100 transition duration-400 ease-out sm:mr-4 px-5 hover:font-bold sm:text-sm mr-1">Iniciar sesion</Link>
                <Link to={REGISTER_URL} className="bg-white text-blue-900 p-2 rounded-full hover:bg-blue-700 hover:text-neutral-100 transition duration-400 ease-out px-5 hover:font-bold">Registrarse</Link>
             </div>
          </div>
