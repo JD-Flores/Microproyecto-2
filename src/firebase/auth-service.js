@@ -12,8 +12,8 @@ export const signInWithGoogle = async()=>{
         if(isNewUser){
           await createUserProfile(result.user.uid,{
             email: result.user.email,
-            name: result.user.displayName,
             username: "",
+            password: "",
             
           })
         }
@@ -32,16 +32,16 @@ export const logInWithEmailAndPassword = async(email,password)=>{
 };
 
 export const registerWithEmailAndPassword = async(
+  username,
   email,
   password,
-  extraData
   )=>{
   try {
     const result = await createUserWithEmailAndPassword(auth,email,password);
     await createUserProfile(result.user.uid,{
+      username,
       email,
       password,
-      ...extraData,
     })
     console.log("Registro exitoso",result)
   } catch (error) {
