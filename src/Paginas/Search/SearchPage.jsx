@@ -2,13 +2,17 @@ import React, { useEffect, useState } from 'react'
 import { MovieCard } from '../../Componentes/MovieCard/MovieCard'
 import searchicon from '../../assets/search.png'
 import { useMovies } from '../../hooks/useMovies'
+import { useLanguages } from '../../hooks/useLanguages'
+import { Link } from 'react-router-dom';
 
 export function SearchPage() {
 
   const { movies, isLoading, getMovies, getMovieQuery } = useMovies();
+  const { languages, isLoadingLanguages, getLanguages } = useLanguages();
   
   useEffect(() => {
     getMovies();
+    getLanguages();
   }, []);
 
   const [value, setValue] = useState('');
@@ -30,7 +34,9 @@ export function SearchPage() {
       </div>
       <div className="flex flex-wrap items-center justify-between m-4 gap-y-4 mt-8">
         {movies.map((movie, idx) => (
-        <MovieCard key={idx} movie={movie} />
+          <Link to={`/movie/${movie.id}`}>
+              <MovieCard key={idx} movie={movie} languages={languages}/>
+          </Link>
         ))}
       </div>
       
