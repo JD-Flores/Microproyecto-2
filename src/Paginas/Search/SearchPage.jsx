@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { MovieCard } from '../../Componentes/MovieCard/MovieCard'
 import searchicon from '../../assets/search.png'
 import { useMovies } from '../../hooks/useMovies'
