@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { fetchMovies, fetchUpcomingMovies, fetchMovieQuery } from "../utils/movies-api";
+import { fetchMovieById } from "../utils/movies-api";
 
 export function useMovies() {
     const [movies, setMovies] = useState([])
     const [total_pages, setPages] = useState()
     const [isLoading, setLoading] = useState(false);
+    const [movie, setMovie] = useState({})
 
     const getUpcomingMovies = async (page) => {
         setLoading(true)
@@ -28,7 +30,15 @@ export function useMovies() {
         const {data} = await fetchMovieQuery(search)
         
         setMovies(data.results)
+        setLoading(false)
     }
-    return {movies, total_pages, isLoading, getMovies, getUpcomingMovies, getMovieQuery}
-}
 
+    const getMovieById = async (movie_id) => {
+        setLoading(true)
+        const {data} = await fetchMovieById(movie_id)
+        setMovie(data)
+        setLoading(false)
+    }
+
+    return {movies, total_pages, isLoading, getMovies, getUpcomingMovies, getMovieQuery, getMovieById, movie}
+}

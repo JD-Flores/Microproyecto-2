@@ -12,7 +12,12 @@ export function MovieCard (props) {
             <div className="p-4">
                 <h1 className="text-2xl font-bold">{title}</h1>
                 <h1 className=""><span className="font-semibold">Popularidad:</span>&nbsp;{popularity}</h1>
-                <h1 className=""><span className="font-semibold">Idioma:</span>&nbsp;{original_language}</h1>
+                <h1 className=""><span className="font-semibold">Idioma:</span>&nbsp;
+                {props.languages && props.languages
+                .filter(language => language.iso_639_1 === original_language)
+                .map(language => language.english_name)
+                }
+                </h1>
             </div>
             
         </div>
