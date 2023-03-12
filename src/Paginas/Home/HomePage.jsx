@@ -11,8 +11,6 @@ export function HomePage() {
     getMovies();
   }, []);
 
-  // const { upcomingMovies, isUpcomingLoading, getUpcomingMovies } = useUpcomingMovies();
-
   useEffect(() => {
    getUpcomingMovies();
   }, []);
