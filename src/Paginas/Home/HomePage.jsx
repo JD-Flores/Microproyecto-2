@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { MovieCard } from '../../Componentes/MovieCard/MovieCard'
 import { useMovies } from '../../hooks/useMovies'
-import { useUpcomingMovies } from '../../hooks/useUpcomingMovies'
+
 
 export function HomePage() {
 
@@ -31,3 +31,4 @@ export function HomePage() {
     </div>
   )
 }
+ 
