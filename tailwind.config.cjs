@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         'alfa-slab-one': ['"Alfa Slab One"', 'regular'],
         'comfortaa': ['"Comfortaa"', 'light'],
+        'sono': ['Sono']
       },
     }
   },
