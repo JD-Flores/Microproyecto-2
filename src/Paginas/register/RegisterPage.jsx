@@ -12,19 +12,18 @@ export function RegisterPage() {
         password:"",
     })
   
-//const para el login con google
     const handleSigninWithGoogle = async ()=>{
         await signInWithGoogle();
         navigate(MOVIES_URL)
     }
 
-    const onSubmit = async(event)=>{
-        event.preventDefault();//evita que el form recargue la pagina
-        const{username,email,password}=formData//form destructurado
-        await registerWithEmailAndPassword(username, email,password);
+    const onSubmit = async(event) => {
+        event.preventDefault();
+        const{username, email, password} = formData
+        await registerWithEmailAndPassword(username, email, password);
         navigate(MOVIES_URL)
     }
-//en cada input utiliza la info del campo para agregarla al form existente
+
     const handleOnChange = (event)=>{
         const{name,value}=event.target;
         setFormData({
