@@ -4,6 +4,7 @@ import { fetchMovieById } from "../utils/movies-api";
 
 export function useMovies() {
     const [movies, setMovies] = useState([])
+    const [upcoming, setUpcomingMovies] = useState([])
     const [total_pages, setPages] = useState()
     const [isLoading, setLoading] = useState(false);
     const [movie, setMovie] = useState({})
@@ -13,7 +14,7 @@ export function useMovies() {
         const {data} = await fetchUpcomingMovies(page)
         
         setPages(data.total_pages)
-        setMovies(data.results)
+        setUpcomingMovies(data.results)
         setLoading(false)
     }
     
@@ -40,5 +41,5 @@ export function useMovies() {
         setLoading(false)
     }
 
-    return {movies, total_pages, isLoading, getMovies, getUpcomingMovies, getMovieQuery, getMovieById, movie}
+    return {movies, upcoming, total_pages, isLoading, getMovies, getUpcomingMovies, getMovieQuery, getMovieById, movie}
 }
